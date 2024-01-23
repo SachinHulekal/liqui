@@ -17,6 +17,7 @@ public class App {
 
     // Get time from DB server
     try {
+      Class.forName("org.postgresql.Driver");
       String url = "jdbc:postgresql://database-1.c9yewug28hvf.ap-south-1.rds.amazonaws.com:5434/postgres";
       String username = "postgres";
       String password = "postgres";
