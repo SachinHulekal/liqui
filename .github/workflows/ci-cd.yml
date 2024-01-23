@@ -23,7 +23,7 @@ jobs:
           aws-region: ap-south-1
       - name: Create AWS Lambda Function
         run: |
-          aws lambda create-function --function-name testClass --runtime java17 --handler liqui.sac.App::getCurrentTime --role arn:aws:iam::730335235156:role/lamdaTest --zip-file fileb://target/sac-0.0.1-SNAPSHOT.jar
+          aws lambda create-function --function-name testClass --runtime java17 --handler dev.lumme.liquibase.LiquibaseRunner::run --role arn:aws:iam::730335235156:role/lamdaTest --zip-file fileb://target/liquibase-from-java-1.0-SNAPSHOT.jar
         continue-on-error: true
       - name: Update Lambda Function
-        run: aws lambda update-function-code --function-name testClass --zip-file fileb://target/sac-0.0.1-SNAPSHOT.jar
+        run: aws lambda update-function-code --function-name testClass --zip-file fileb://target/liquibase-from-java-1.0-SNAPSHOT.jar
